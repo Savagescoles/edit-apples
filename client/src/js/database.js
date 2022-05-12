@@ -16,9 +16,9 @@ export const putDb = async (id, content) => {
   console.log('putDb implemented');
 // connects to DB
   const contactDb = await openDB('jate', 1);
-// creates transaction to database
+// creates transaction 
   const tx = contactDb.transaction('jate', 'readwrite');
-  // open the object store
+  // open the store
   const store = tx.objectStore('jate');
 // use put method on the store
   const request = store.put({ id: id, content: content});
@@ -31,9 +31,9 @@ export const getDb = async () => {
   console.log('getDb implemented');
 // connects to DB
   const contactDb = await openDB('jate', 1);
-// creates transaction to database
+// creates transaction 
   const tx = contactDb.transaction('jate', 'readonly');
-  // open the object store
+  // open the store
   const store = tx.objectStore('jate');
 // use put method on the store
   const request = store.getAll();
